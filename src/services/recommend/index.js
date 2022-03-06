@@ -30,3 +30,13 @@ export function getTopList(idx) {
     },
   });
 }
+
+export function getArtistList(limit, cat) {
+  return request({
+    url: "/artist/list",
+    params: {
+      cat,
+      limit,
+    },
+  });
+}
