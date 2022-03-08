@@ -1,6 +1,35 @@
-import React, { memo } from "react";
-import { RankingListWrapper } from "./style";
+import React, { useEffect, memo } from "react";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { getTopData } from "../../store/actionCreators";
+
+import { RankingWrapper } from "./style";
+import ThemeHeaderRcm from "@/components/theme-header-rcm";
+import TopRanking from "@/components/top-ranking";
+
 const RankingList = memo(() => {
-  return <RankingListWrapper>RankingListWrapper</RankingListWrapper>;
+  const dispatch = useDispatch();
+  const state = useSelector(
+    (state) => ({
+      topUpList: state.getIn(["recommend", "topUpList"]),
+      topNewList: state.getIn(["recommend", "topNewList"]),
+      topOriginList: state.getIn(["recommend", "topOriginList"]),
+    }),
+    shallowEqual
+  );
+  useEffect(() => {
+    dispatch(getTopData(0));
+    dispatch(getTopData(2));
+    dispatch(getTopData(3));
+  }, [dispatch]);
+  return (
+    <RankingWrapper>
+      <ThemeHeaderRcm title="榜单" moreLink="/discover/ranking" />
+      <div className="tops">
+        <TopRanking info={state.topUpList} />
+        <TopRanking info={state.topNewList} />
+        <TopRanking info={state.topOriginList} />
+      </div>
+    </RankingWrapper>
+  );
 });
 export default RankingList;

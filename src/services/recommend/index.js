@@ -16,8 +16,8 @@ export function getNewAlbum(limit, offset) {
   return request({
     url: "/top/album",
     params: {
-      limit,
       offset,
+      limit,
     },
   });
 }

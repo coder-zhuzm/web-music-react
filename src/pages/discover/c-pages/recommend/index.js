@@ -10,8 +10,8 @@ import HotRecommend from "./components/hotRecommend";
 import NewAlbum from "./components/new-album";
 import RankingList from "./components/ranking-list";
 import UserLogin from "./components/user-login";
-import HotRadio from "./components/hot-radio";
 import SettleSinger from "./components/settle-singer";
+import HotRadio from "./components/hot-radio";
 const Recommend = memo(() => {
   return (
     <RecommendWrapper>

@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { HeaderRcmWrapper } from "./style";
 const ThemeHeaderRcm = memo((props) => {
-  const { title, keywords, moreLink, keywordClick } = props;
+  const { title="ThemeHeaderRcm", keywords = [], moreLink = "/", keywordClick } = props;
   return (
     <HeaderRcmWrapper className="sprite_02">
       <div className="left">

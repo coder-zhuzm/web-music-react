@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# React实战之云音乐项目
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+> 练习 coderwhy 老师的云音乐项目  GitHub地址：https://github.com/coderwhy/hy-react-web-music
+### 进度
+- [x] 基本框架搭建
+- [x] 首页推荐
+### 1.1. 项目简介
 
-In the project directory, you can run:
+使用React编写的云音乐PC Web项目，接口来源于开源的接口，自己已经做了部署。
 
-### `npm start`
+项目已经完成功能如下：（你可以下载下来自己体验一下）
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+推荐页面：
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* 轮播图
+* 热门推荐
+* 新碟上架
+* 榜单
+* 等等
 
-### `npm test`
+![推荐页面](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9kwh3cqj31ck0p37uj.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![推荐页面](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghva5bx7bvj31d10p6thq.jpg)
 
-### `npm run build`
+歌曲播放：
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* 目前做了榜单中歌曲的点击播放；
+* 事实上其他页面只要将歌曲的id传入到redux中就可以，整个逻辑已经打通；
+* 做了歌曲的各种控制（暂停、播放、上一首、下一首、进度改变）；
+* 做了播放循序切换：顺序播放、随机播放、单曲循环；
+* 做了歌词的解析、展示、滚动；
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![歌曲播放](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9pc3ki6j30ws0ahti8.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+排行榜页面：
 
-### `npm run eject`
+* 各种榜单的切换；
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![排行榜页面](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9qjg0m4j31d10p4ai3.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+歌单页面：
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* 选择分类、选择分类后根据分类切换歌单；
+* 根据分类，歌单列表的展示；
+* 分页功能；
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![歌单页面](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9rsp1stj31d10p44j2.jpg)
 
-## Learn More
+主播电台：
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* 电台分类的展示、滚动；
+* 不同分类展示不同的数据；
+* 电台排行榜展示、分页；
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![主播电台](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9sxt3nqj31d10p4k4s.jpg)
 
-### Code Splitting
+歌手页面：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* 各种歌手分类（没找到接口，还自定义了一些数据）
+* 歌手字母分类、对应歌手展示；
 
-### Analyzing the Bundle Size
+![歌手页面](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9ts3h5dj31d10p4qfo.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+新碟上架页面：
 
-### Making a Progressive Web App
+* 热门新碟；
+* 全部新碟、分页展示；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![新碟上架页面](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghv9uryexgj31d10p4aue.jpg)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### 1.2. 项目规范
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**项目规范：项目中有一些开发规范和代码风格**
 
-### `npm run build` fails to minify
+* 1.文件夹、文件名称统一小写、多个单词以连接符（-）连接；
+* 2.JavaScript变量名称采用小驼峰标识，常量全部使用大写字母，组件采用大驼峰；
+* 3.CSS采用普通CSS和styled-component结合来编写（全局采用普通CSS、局部采用styled-component）;
+* 4.整个项目不再使用class组件，统一使用函数式组件，并且全面使用Hooks；
+* 5.所有的函数式组件，为了避免不必要的渲染，全部使用memo进行包裹；
+* 6.组件内部的状态，使用useState、useReducer；业务数据全部放在redux中管理；
+* 7.函数组件内部基本按照如下顺序编写代码：
+  * 组件内部state管理；
+  * redux的hooks代码；
+  * 其他组件hooks代码；
+  * 其他逻辑代码；
+  * 返回JSX代码；
+* 8.redux代码规范如下：
+  * redux结合ImmutableJS
+  * 每个模块有自己独立的reducer，通过combineReducer进行合并；
+  * 异步请求代码使用redux-thunk，并且写在actionCreators中；
+  * redux直接采用redux hooks方式编写，不再使用connect；
+* 9.网络请求采用axios
+  * 对axios进行二次封装；
+  * 所有的模块请求会放到一个请求文件中单独管理；
+* 10.项目使用AntDesign
+  * 项目中某些AntDesign中的组件会被拿过来使用；
+  * 但是多部分组件还是自己进行编写；
+* 其他规范在项目中根据实际情况决定和编写；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### 1.3. 项目运行
+
+clone项目：
+
+```
+git clone https://github.com/coderwhy/hy-react-web-music.git
+```
+
+安装项目依赖：
+
+```shell
+yarn install
+```
+
+项目运行：
+
+```shell
+yarn start
+```
+
+
+
