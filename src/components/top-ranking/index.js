@@ -8,7 +8,7 @@ import { TopRankingWrapper } from "./style";
 export default memo(function TopRanking(props) {
   const { info } = props;
   const { tracks = [] } = info;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // const playMusic = (item) => {
   //   dispatch(getSongDetailAction(item.id));
