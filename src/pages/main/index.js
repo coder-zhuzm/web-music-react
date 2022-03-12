@@ -6,13 +6,14 @@ import routes from "@/router";
 
 import AppHeader from "../../components/app-header";
 import AppFooter from "../../components/app-footer";
-
+import AppPlaybar from "@/pages/player/app-play-bar";
 const Main = memo((props) => {
   return (
     <HashRouter>
       <AppHeader />
       <Suspense fallback={<div>loading</div>}>{renderRoutes(routes)}</Suspense>
       <AppFooter />
+      <AppPlaybar />
     </HashRouter>
   );
 });

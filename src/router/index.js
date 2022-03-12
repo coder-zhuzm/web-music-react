@@ -9,7 +9,7 @@ const Songs = React.lazy((_) => import("../pages/discover/c-pages/songs"));
 const Djradio = React.lazy((_) => import("../pages/discover/c-pages/djradio"));
 const Artist = React.lazy((_) => import("../pages/discover/c-pages/artist"));
 const Album = React.lazy((_) => import("../pages/discover/c-pages/album"));
-// const Player = React.lazy(_ => import("../pages/player"));
+const Player = React.lazy((_) => import("../pages/player"));
 
 const Friend = React.lazy((_) => import("../pages/friend"));
 const Mine = React.lazy((_) => import("../pages/mine"));
@@ -51,6 +51,10 @@ const routers = [
       {
         path: "/discover/album",
         component: Album,
+      },
+      {
+        path: "/discover/player",
+        component: Player,
       },
     ],
   },

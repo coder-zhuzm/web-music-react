@@ -150,7 +150,7 @@ button {
   background: url(../img/sprite_cover.png) no-repeat -145px -57px;
 }
 
-
+/* 重写antd message 样式 */
 .ant-message .ant-message-notice-content {
   position: fixed;
   left: 50%;
