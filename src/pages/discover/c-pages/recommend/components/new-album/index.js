@@ -33,11 +33,12 @@ const NewAlbum = memo(() => {
             {[0, 1].map((item) => {
               return (
                 <div key={item} className="page">
-                  {state.newAlbum
-                    .slice(item * 5, (item + 1) * 5)
-                    .map((item) => {
-                      return <AlbumCover key={item.id} info={item} />;
-                    })}
+                  {state.newAlbum &&
+                    state.newAlbum
+                      .slice(item * 5, (item + 1) * 5)
+                      .map((item) => {
+                        return <AlbumCover key={item.id} info={item} />;
+                      })}
                 </div>
               );
             })}

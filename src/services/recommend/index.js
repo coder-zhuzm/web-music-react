@@ -22,11 +22,11 @@ export function getNewAlbum(limit, offset) {
   });
 }
 
-export function getTopList(idx) {
+export function getTopList(id) {
   return request({
-    url: "/top/list",
+    url: "/playlist/detail",
     params: {
-      idx,
+      id,
     },
   });
 }

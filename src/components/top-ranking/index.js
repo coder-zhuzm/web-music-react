@@ -32,24 +32,25 @@ export default memo(function TopRanking(props) {
         </div>
       </div>
       <div className="list">
-        {tracks.slice(0, 10).map((item, index) => {
-          return (
-            <div key={item.id} className="list-item">
-              <div className="rank">{index + 1}</div>
-              <div className="info">
-                <span className="name text-nowrap">{item.name}</span>
-                <div className="operate">
-                  <button
-                    className="btn sprite_02 play"
-                    onClick={(e) => playMusic(item)}
-                  ></button>
-                  <button className="btn sprite_icon2 addto"></button>
-                  <button className="btn sprite_02 favor"></button>
+        {tracks &&
+          tracks.slice(0, 10).map((item, index) => {
+            return (
+              <div key={item.id} className="list-item">
+                <div className="rank">{index + 1}</div>
+                <div className="info">
+                  <span className="name text-nowrap">{item.name}</span>
+                  <div className="operate">
+                    <button
+                      className="btn sprite_02 play"
+                      onClick={(e) => playMusic(item)}
+                    ></button>
+                    <button className="btn sprite_icon2 addto"></button>
+                    <button className="btn sprite_02 favor"></button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       <div className="footer">
         <a href="/todo">查看全部 &gt;</a>

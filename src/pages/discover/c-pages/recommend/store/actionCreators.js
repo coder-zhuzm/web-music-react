@@ -20,7 +20,7 @@ const changeRecommendAction = (res) => ({
 
 const changeNewAlbumAction = (res) => ({
   type: actionTypes.CHANGE_NEW_ALBUM,
-  newAlbum: res.albums
+  newAlbum: res.weekData
 })
 
 const changeUpListAction = (res) => ({
@@ -68,17 +68,17 @@ export const getAlbum = () => {
   }
 }
 
-export const getTopData = (idx) => {
+export const getTopData = (id) => {
   return dispatch => {
-    getTopList(idx).then(res => {
-      switch (idx) {
-        case 0:
+    getTopList(id).then(res => {
+      switch (id) {
+        case 19723756:
           dispatch(changeNewListAction(res));
           break;
-        case 2:
+        case 3779629:
           dispatch(changeOriginListAction(res));
           break;
-        case 3:
+        case 2884035:
           dispatch(changeUpListAction(res));
           break;
         default:
